@@ -1,3 +1,6 @@
+/* 
+ * Forked from https://github.com/leemark/better-simple-slideshow 
+ */
 var makeSlideshow = function (el, options) {
   var $slideshows = document.querySelectorAll(el), // a collection of all of the slideshow
     $slideshow = {},
@@ -13,7 +16,6 @@ var makeSlideshow = function (el, options) {
           auto: (typeof options.auto === "undefined") ? false : options.auto,
           speed: (typeof options.auto.speed === "undefined") ? 4000 : options.auto.speed,
           pauseOnHover: (typeof options.auto.pauseOnHover === "undefined") ? false : options.auto.pauseOnHover,
-          fullScreen: (typeof options.fullScreen === "undefined") ? false : options.fullScreen,
           swipe: (typeof options.swipe === "undefined") ? false : options.swipe
         };
         
@@ -30,9 +32,6 @@ var makeSlideshow = function (el, options) {
         this.addEventListeners(el);
         if (this.opts.auto) {
           this.autoCycle(this.el, this.opts.speed, this.opts.pauseOnHover);
-        }
-        if (this.opts.fullScreen) {
-          this.addFullScreen(this.el);
         }
         if (this.opts.swipe) {
           this.addSwipe(this.el);
@@ -108,16 +107,6 @@ var makeSlideshow = function (el, options) {
         } // end pauseonhover
         
       },
-      addFullScreen: function(el){
-        var that = this,
-        fsControl = document.createElement("span");
-        
-        fsControl.classList.add('bss-fullscreen');
-        el.appendChild(fsControl);
-        el.querySelector('.bss-fullscreen').addEventListener('click', function () {
-          that.toggleFullScreen(el);
-        }, false);
-      },
       addSwipe: function(el){
         var that = this,
           ht = new Hammer(el);
@@ -128,35 +117,8 @@ var makeSlideshow = function (el, options) {
           that.showCurrent(1); // increment & show
         });
       },
-      toggleFullScreen: function(el){
-        // https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode
-        if (!document.fullscreenElement &&    // alternative standard method
-          !document.mozFullScreenElement && !document.webkitFullscreenElement &&   
-          !document.msFullscreenElement ) {  // current working methods
-          if (document.documentElement.requestFullscreen) {
-            el.requestFullscreen();
-          } else if (document.documentElement.msRequestFullscreen) {
-            el.msRequestFullscreen();
-          } else if (document.documentElement.mozRequestFullScreen) {
-            el.mozRequestFullScreen();
-          } else if (document.documentElement.webkitRequestFullscreen) {
-            el.webkitRequestFullscreen(el.ALLOW_KEYBOARD_INPUT);
-          }
-        } else {
-          if (document.exitFullscreen) {
-            document.exitFullscreen();
-          } else if (document.msExitFullscreen) {
-            document.msExitFullscreen();
-          } else if (document.mozCancelFullScreen) {
-            document.mozCancelFullScreen();
-          } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-          }
-        }
-      } // end toggleFullScreen
-      
     }; // end Slideshow object .....
-    
+
   // make instances of Slideshow as needed
   [].forEach.call($slideshows, function (el) {
     $slideshow = Object.create(Slideshow);

@@ -9,20 +9,20 @@ can add as many as you want. Just use multiple `<figure>` elements with the same
 structure as a the first two.
 
 ```html
-<section class=”my-slideshow”>
+<section class="my-slideshow">
 
   <figure>
-    <img src=”images/image1.png” height=”300”>
+    <img src="images/image1.png" height="300">
     <figcaption>Caption for image 1</figcaption>
   </figure>
 
   <figure>
-    <img src=”images/image2.png” height=”300”>
+    <img src="images/image2.png" height="300">
     <figcaption>Caption for image 2</figcaption>
   </figure>
 
   <figure>
-    <img src=”images/image4.png” height=”300”>
+    <img src="images/image4.png" height="300">
     <figcaption>Caption for image 4</figcaption>
   </figure>
 

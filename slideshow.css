@@ -1,3 +1,6 @@
+/* 
+ * Forked from https://github.com/leemark/better-simple-slideshow 
+ */
 .bss-wrapper {
   display: flex;
   align-items: center;
@@ -84,63 +87,11 @@
 }
 .bss-next{
   padding: 10px 5px 15px 10px;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-}
-.bss-prev{
-  padding: 10px 10px 15px 5px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-.bss-fullscreen{
-  display: block;
-  width: 32px;
-  height: 32px;    
-  background: rgba(0,0,0,.4) url(../img/arrows-alt_ffffff_64.png); 
-  -webkit-background-size: contain; 
-  background-size: contain;
-  position: absolute;
-  top: 5px;
-  left: 5px;   
-  cursor: pointer;    
-  opacity: .3;
-} 
-.bss-fullscreen:hover{
-  opacity: .8;   
-}
-:-webkit-full-screen .bss-fullscreen{
-    background: rgba(0,0,0,.4) url(../img/compress_ffffff_64.png);
-    -webkit-background-size: contain;
-    background-size: contain;
-}
-:-moz-full-screen .bss-fullscreen{
-    background: rgba(0,0,0,.4) url(../img/compress_ffffff_64.png);
-    background-size: contain;
-}
-:-ms-fullscreen .bss-fullscreen{
-    background: rgba(0,0,0,.4) url(../img/compress_ffffff_64.png);
-    background-size: contain;
-}
-:full-screen .bss-fullscreen{
-    background: rgba(0,0,0,.4) url(../img/compress_ffffff_64.png);
-    -webkit-background-size: contain;
-    background-size: contain;
-}
-:-webkit-full-screen .bss-fullscreen{
-    background: rgba(0,0,0,.4) url(../img/compress_ffffff_64.png);
-    -webkit-background-size: contain;
-    background-size: contain;
-}
-:-moz-full-screen .bss-fullscreen{
-    background: rgba(0,0,0,.4) url(../img/compress_ffffff_64.png);
-    background-size: contain;
-}
-:-ms-fullscreen .bss-fullscreen{
-    background: rgba(0,0,0,.4) url(../img/compress_ffffff_64.png);
-    background-size: contain;
-}
-:fullscreen .bss-fullscreen{
-    background: rgba(0,0,0,.4) url(../img/compress_ffffff_64.png);
-    -webkit-background-size: contain;
-    background-size: contain;
+.bss-prev{
+  padding: 10px 10px 15px 5px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
