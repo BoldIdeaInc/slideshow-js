@@ -44,7 +44,7 @@ stylesheets. This code snippet shows how to load the slideshow-js stylesheet
 that's hosted on another server so you don't have to download it:
 
 ```html
-<link rel="stylesheet" type="text/css" href="https://boldidea.org/static/webdev/slideshow-js/slideshow.css">
+<link rel="stylesheet" type="text/css" href="https://courses.boldidea.org/webdev/slideshow-js/slideshow.css">
 ```
 
 ### Step 3: Add the javascript code
@@ -57,7 +57,7 @@ It's best to add javascript code at the end of your `<body>` element (just
 before the `</body>` closing tag).
 
 ```html
-<script src="https://boldidea.org/static/webdev/slideshow-js/slideshow.js"></script>
+<script src="https://courses.boldidea.org/webdev/slideshow-js/slideshow.js"></script>
 <script>makeSlideshow('.my-slideshow');</script>
 ```
 
